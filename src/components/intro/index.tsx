@@ -81,7 +81,7 @@ const Intro = ({ next }: IIntroProps) => {
             onClick={() => toggleTask(task)}
             className={`px-4 py-2 rounded-full text-sm transition cursor-pointer
                 ${
-                  tasks.includes(task)
+                  tasks.some((t) => t.id === task.id)
                     ? "bg-black text-white"
                     : "bg-[#F3EFEE] text-gray-700"
                 }`}

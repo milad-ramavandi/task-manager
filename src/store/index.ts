@@ -10,8 +10,8 @@ export const useTasksStore = create<ITasksStore>()(
       tasks: [],
       toggleTask: (task) =>
         set((state) =>
-          state.tasks.includes(task)
-            ? { tasks: state.tasks.filter((t) => t !== task) }
+          state.tasks.some((t) => t.id === task.id)
+            ? { tasks: state.tasks.filter((t) => t.id !== task.id) }
             : { tasks: [...state.tasks, task] }
         ),
       toggleCompleteTask: (id) =>
