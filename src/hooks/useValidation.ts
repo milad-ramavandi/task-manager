@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 const useValidation = () => {
   const validation = yup.object({
-    title: yup.string().required("Title is required"),
+    title: yup.string().max(50, "Title shouldn't be more 50 characters").required("Title is required"),
     category: yup.string().required("Category is required"),
     date: yup
       .string()
